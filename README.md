@@ -25,20 +25,109 @@ A comprehensive web application reconnaissance tool designed for Capture The Fla
 - Python 3.6 or higher
 - pip package manager
 
-### Clone Repository
+### macOS Installation
+
+#### Step 1: Install Python (if not already installed)
+macOS comes with Python, but it's recommended to use the latest version:
+```bash
+# Using Homebrew (recommended)
+brew install python3
+
+# Or download from python.org
+# Visit https://www.python.org/downloads/macos/
+```
+
+#### Step 2: Clone Repository
 ```bash
 git clone https://github.com/yourusername/ctf-recon-tool.git
 cd ctf-recon-tool
 ```
 
-### Install Dependencies
+#### Step 3: Create Virtual Environment (recommended)
 ```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### Step 4: Install Dependencies
+```bash
+pip3 install -r requirements.txt
+```
+
+#### Step 5: Make Script Executable
+```bash
+chmod +x ctf_recon.py
+```
+
+#### Step 6: Verify Installation
+```bash
+python3 ctf_recon.py -h
+```
+
+### Linux Installation
+```bash
+# Clone repository
+git clone https://github.com/yourusername/ctf-recon-tool.git
+cd ctf-recon-tool
+
+# Create virtual environment (optional but recommended)
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Make executable
+chmod +x ctf_recon.py
+```
+
+### Windows Installation
+```bash
+# Clone repository
+git clone https://github.com/yourusername/ctf-recon-tool.git
+cd ctf-recon-tool
+
+# Create virtual environment (optional but recommended)
+python -m venv venv
+venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-Alternatively, install dependencies manually:
+### Quick Install (All Platforms)
+
+If you don't want to use a virtual environment:
 ```bash
-pip install requests
+git clone https://github.com/yourusername/ctf-recon-tool.git
+cd ctf-recon-tool
+pip3 install -r requirements.txt
+```
+
+### Manual Dependency Installation
+
+If you prefer to install dependencies manually:
+```bash
+pip3 install requests>=2.31.0
+```
+
+## Quick Start (macOS)
+
+For Mac users who want to get started immediately:
+```bash
+# 1. Install Homebrew (if not installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Install Python 3
+brew install python3
+
+# 3. Clone and setup
+git clone https://github.com/yourusername/ctf-recon-tool.git
+cd ctf-recon-tool
+pip3 install -r requirements.txt
+
+# 4. Run your first scan
+python3 ctf_recon.py -u http://target.com -a
 ```
 
 ## Usage
@@ -252,6 +341,43 @@ Unauthorized access to computer systems is illegal. The authors assume no liabil
 
 ## Troubleshooting
 
+### macOS Specific Issues
+
+**Problem**: "command not found: python3"
+**Solution**: 
+```bash
+# Install Python via Homebrew
+brew install python3
+
+# Or add alias to your shell profile
+echo 'alias python3=/usr/bin/python3' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**Problem**: SSL certificate verification errors
+**Solution**: 
+```bash
+# Install certificates
+/Applications/Python\ 3.*/Install\ Certificates.command
+
+# Or install certifi
+pip3 install --upgrade certifi
+```
+
+**Problem**: Permission denied when running script
+**Solution**: 
+```bash
+chmod +x ctf_recon.py
+# Or always use: python3 ctf_recon.py
+```
+
+**Problem**: pip3 command not found
+**Solution**: 
+```bash
+# Use python3 -m pip instead
+python3 -m pip install -r requirements.txt
+```
+
 ### Connection Issues
 **Problem**: Timeout errors or connection refused
 **Solution**: 
@@ -339,8 +465,8 @@ Security Research Team
 ## Contact
 
 For questions, suggestions, or security concerns:
-- GitHub Issues: https://github.com/yourusername/ctf-recon-tool/issues
-- Email: security@example.com
+- GitHub Issues: https://github.com/raham24/ctf_recon/issues
+- Email: rahamriaz@gmail.com
 
 ## Disclaimer
 
